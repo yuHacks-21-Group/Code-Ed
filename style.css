@@ -1,3 +1,7 @@
+body {
+  background-color: #d3dfe0;
+}
+
 /*Header formatting */
 
 /* Style the header with a grey background and some padding */
@@ -64,7 +68,7 @@
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color: #b0c5c7;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -88,4 +92,157 @@
 .sidebar a:hover:not(.active) {
   background-color: rgb(185, 185, 185);
   color: #1E2761;
+}
+
+/*
+body {
+  background-image: url("waffle.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+input, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.menu-div {
+  width: 20%;
+  margin: 0px auto;
+  margin-top: 10px;
+  padding: 20px;
+  display: none;
+}
+
+.main-div, .search-div{
+  width: 20%;
+  margin: 0px auto;
+  margin-top: 150px;
+  padding: 20px;
+  display: none;
+  color: #000;
+  align-self: auto;
+}
+
+.main-div input{
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div input:focus{
+  border: 1px solid #777;
+}
+
+.main-div button, .menu-div button, .search-div button {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width: 100px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div button:hover, .search-div button:hover, .menu-div button:hover {
+  background: #fff;
+  color: #bd1d1d;
+  border: 1px solid #bd1d1d;
+  cursor: pointer;
+}
+
+.file-div {
+  width: 20%;
+  margin: 0px auto;
+  margin-top: 10px;
+  padding: 20px;
+  display: none;
+}
+
+/* Search bar styling*/
+/*
+.search-div p {
+    padding-top: 64px;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+}
+
+.search-div input {
+    width: 90%;
+    padding: 18px 24px;
+    align-self: center;
+
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 130%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 18px;
+    
+    color: #fff;
+    background-color: transparent;
+/*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+ /*
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 95% center;
+        border-radius: 50px;
+        border: 1px solid #fff;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+}
+.search-div input::placeholder {
+    color:#fff;
+    opacity: 0.8;
+    letter-spacing: 1.5px;
+    font-family: 'Roboto', sans-serif;
+}
+        
+.search-div input:hover, focus {
+    padding: 12px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    background-position: 100% center;
+
+}
+
+.credits-div {
+  display: none;
+}
+
+.credits-div p {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 18px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 250ms ease-in;
+}
+
+.credits-div link:hover, focus{
+    color: color(#86110d blackness(+25%));
 }
