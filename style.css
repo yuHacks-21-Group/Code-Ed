@@ -1,0 +1,91 @@
+/*Header formatting */
+
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #AED6DC;
+  padding: 20px 10%;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #1E2761;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #1E2761;
+  color: #AED6DC;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  color: #AED6DC;
+  background-color: #1E2761;
+  border-radius: 10px;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 950px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: #1E2761;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #F4976C;
+  color: #1E2761;
+  font-weight: bold;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: rgb(185, 185, 185);
+  color: #1E2761;
+}
