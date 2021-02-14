@@ -7,44 +7,34 @@
     <meta name="viewport" content="width=device-width">
     <title>Code-Ed</title>
     <!--Connect to main style.css file-->
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="/style.css" rel="stylesheet" type="text/css" />
     <link href="/teachstyle.css" rel="stylesheet" type="text/css"/>
   </head>
 
   <body>
   <!--Main Page divs-->
   <div id="header_div" class="header">
-  <a href="index.html" class="logo">CODE-ED</a>
+  <a href="/index.html" class="logo">CODE-ED</a>
   <div class="header-right">
     <a <button onclick="goPython()">Python</button></a>
     <a <button onclick="goJava()">Java</button></a>
-    <a class="active" <button onclick="goC()">C</button></a>
-    <a <button onclick="goChallenges()">Playground</button></a>
+    <a <button onclick="goC()">C</button></a>
+    <a class="active" <button onclick="goChallenges()">Playground</button></a>
   </div>
 </div>
-
-<!--Content divs-->
 <div class="sidebar">
-    <a class="active" href="c.html"> Get Started </a>
-    <a href="C/c_syntax.html">Syntax</a>
-    <a href="C/c_datatypes.html">Data Types</a>
-    <a href="C/c_variables.html">Variables</a>
-    <a href="C/c_arrays.html">Lists</a>
-    <a href="C/c_ifstatements.html">If Statements</a>
-    <a href="C/c_loops.html">Loops</a>
+    <a href="/python_playground.html"> Python </a>
+    <a href="/java_playground.html">Java</a>
+    <a class="active" href="/c_playground.html">C</a>
 </div>
 <div class="content">
-    <h1> What is C? </h1>
+    <h1> C Playground </h1>
     <br>
-    <p> C is a general-purpose programming language that is extremely popular, simple, and flexible to use. It is a structured programming language that is machine-independent and extensively used to write various applications, Operating Systems like Windows, and many other complex programs like Oracle database, Git, Python interpreter, and more. </p>
-    <br>
-    <div class="image"> 
-        <img src="C-Logo.png" width: "400px" height: "400px">
-    </div>
+    <iframe height="800px" width="100%" src="https://repl.it/@JoshuaOng918/C-Syntax?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 </div>
 
     <!--Connect to main script.js file-->
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
   </body>
 </html>

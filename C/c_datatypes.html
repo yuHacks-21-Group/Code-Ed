@@ -16,40 +16,43 @@
   <div id="header_div" class="header">
   <a href="/index.html" class="logo">CODE-ED</a>
   <div class="header-right">
-    <a class="active" <button onclick="goPython()">Python</button></a>
+    <a <button onclick="goPython()">Python</button></a>
     <a <button onclick="goJava()">Java</button></a>
-    <a <button onclick="goC()">C</button></a>
+    <a class="active" <button onclick="goC()">C</button></a>
     <a <button onclick="goChallenges()">Playground</button></a>
   </div>
 </div>
 <div class="sidebar">
-    <a href="/python.html"> Get Started </a>
-    <a href="python_syntax.html">Syntax</a>
-    <a href="python_datatypes.html">Data Types</a>
-    <a href="python_variables.html">Variables</a>
-    <a href="python_lists.html">Lists</a>
-    <a href="python_ifstatements.html">If Statements</a>
-    <a class="active" href="python_loops.html">Loops</a>
+    <a href="/c.html"> Get Started </a>
+    <a href="c_syntax.html">Syntax</a>
+    <a class="active" href="c_datatypes.html">Data Types</a>
+    <a href="c_variables.html">Variables</a>
+    <a href="c_arrays.html">Arrays</a>
+    <a href="c_ifstatements.html">If Statements</a>
+    <a href="c_loops.html">Loops</a>
 </div>
 <div class="content">
-    <h1> Loops </h1>
+    <h1> Data Types </h1>
     <br>
-    <p> Python has two types of loops. </p>
-    <br>
-    <h2> For Loops </h2>
-    <br>
-    <p> A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string). With the for loop we can execute a set of statements, once for each item in a list, tuple, set etc. </p>
-    <br>
-    <h3> The range() Function </h3>
-    <br>
-    <p> To loop through a set of code a specified number of times, we can use the range() function. The range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number. </p>
-    <br>
-    <h2> While Loops </h2>
-    <br>
-    <p> With the while loop we can execute a set of statements as long as a condition is true. </p>
+    <p> In programming, data type is an important concept.
+
+    Variables can store data of different types, and different types can do different things.
+
+    Python has the following data types built-in by default, in these categories:
+    </p>
     <br>
 
-        <!--Div for Youtube Results-->
+<ul>
+<li> Text Type:	str </li>
+<li> Numeric Types:	int, float, complex </li>
+<li> Sequence Types:	list, tuple, range </li>
+<li> Mapping Type: dict </li>
+<li> Set Types: set, frozenset </li>
+<li> Boolean Type: bool </li>
+</ul>
+<br>
+
+    <!--Div for Youtube Results-->
   <div id="youtube_div" class="youtube">
     <h1>Youtube Results</h1> 
     <br>
@@ -123,19 +126,20 @@
     gapi.auth2.init({client_id: "989850531815-3dr7nh4nq6ggtna0l7kmkcqs3pposiji.apps.googleusercontent.com"});
   });
 </script>
-<button id="authButton" onclick="authenticate().then(loadClient).then(execute.bind(null, 'Python Loops'))">Authorize and Get Results</button>
+<button id="authButton" onclick="authenticate().then(loadClient).then(execute.bind(null, 'Java Data Types'))">Authorize and Get Results</button>
 </div>
 
-    <!--Div for Challenges-->
+
+
+<!--Div for Challenges-->
   <div id="challenge_div" class="challenge">
       <h1>Ready for a Challenge?</h1>
       <br>
-      <p>Check your understanding with CODE-ED's Python Loop Challenge.</p>
+      <p>Check your understanding with CODE-ED's Python Data Type Challenge.</p>
       <br>
-    <iframe height="800px" width="100%" src="https://repl.it/@JoshuaOng918/Python-Loops?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-    </div>
+<iframe height="800px" width="100%" src="https://repl.it/@JoshuaOng918/Python-Data-Types?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 </div>
-
+</div>
     <!--Connect to main script.js file-->
     <script src="/script.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>

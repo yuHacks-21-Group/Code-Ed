@@ -20,8 +20,7 @@ This is the main JavaScript file for Code-Ed. This file handles operations like
 //   }
 // }
 
-//API_KEY from Google Credentials
-//let API_KEY = "AIzaSyBTrwHONkXik6Dfm6XnMC3rda3IBsl0Ys4"
+var i = 1;
 
 function authenticate() {
     return gapi.auth2.getAuthInstance()
@@ -36,16 +35,41 @@ function authenticate() {
               function(err) { console.error("Error loading GAPI client for API", err); });
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute() {
+  function execute(keyterm) {
     return gapi.client.youtube.search.list({
       "part": [
         "snippet"
       ],
-      "maxResults": 25,
-      "q": "surfing"
+      "maxResults": 9,
+      "q": keyterm
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
+                response.result.items.forEach(item => {
+      var myElement = document.getElementById("column" + i);
+      var video = `
+            <div class="card">
+              <iframe class="youtubeResult"
+              src="https://www.youtube.com/embed/${item.id.videoId}" allowfullscreen>
+              </iframe>
+            </div>
+      `
+      var divNode = `
+      <div class="column">
+      </div>
+      `
+
+      var div2Node = `
+      <div class="card">
+      </div>
+      `
+
+      var d = document.createElement("div");
+      var f = document.createTextNode(video);
+      d.innerHTML += video;
+      myElement.appendChild(d);
+      i++;
+    })
                 console.log("Response", response);
               },
               function(err) { console.error("Execute error", err); });
@@ -72,7 +96,6 @@ function goChallenges(){
 //Function to go to the Python page when the Python button is selected
 function goPython(){
   window.location="/python.html";
-  //videoSearch(API_KEY, "Python", 9)
 }
 
 //Function to go to the Java page when the Java button is selected
@@ -99,21 +122,21 @@ function goC(){
 //   $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search,function(data){
 //     console.log(data)
 
-//     data.items.forEach(item => {
-//       var video = `
+    // data.items.forEach(item => {
+    //   var video = `
 
-//         <div class="column">
-//           <div class="card">
-//               <iframe class="youtubeResult"
-//               src="https://www.youtube.com/embed/${item.id.videoId}" allowfullscreen>
-//               </iframe>
-//           </div>
-//         </div>
+    //     <div class="column">
+    //       <div class="card">
+    //           <iframe class="youtubeResult"
+    //           src="https://www.youtube.com/embed/${item.id.videoId}" allowfullscreen>
+    //           </iframe>
+    //       </div>
+    //     </div>
 
-//       `
+    //   `
 
-//       $("#youtube_div").append(video)
-//     })
+    //   $("#youtube_div").append(video)
+    // })
 
 //   })
 

@@ -20,8 +20,7 @@
     <a class="active" <button onclick="goPython()">Python</button></a>
     <a <button onclick="goJava()">Java</button></a>
     <a <button onclick="goC()">C</button></a>
-    <a <button onclick="goChallenges()">More Challenges</button></a>
-    <a <button onclick="goAbout()">About Us</button></a>
+    <a <button onclick="goChallenges()">Playground</button></a>
   </div>
 </div>
 <div id="sidebar" class="sidebar">
@@ -40,14 +39,42 @@
   <div id="description_div" class="contentdesc">
     <h1> Variables </h1>
     <br>
-    <p> Variables are storage containers for data. Think of a variable as a box where its name is the box's label and the data is the content stored inside it. </p>
+    <p> Variables are storage containers for data. Think of a variable as a box where its name is the box's label and the data is the content stored inside it. To create a variable, you just assign it a value and then start using it. Assignment is done with a single equals sign (=). For example: number = 1</p>
   </div>
   <br>
+  
   <!--Div for Youtube Results-->
   <div id="youtube_div" class="youtube">
     <h1>Youtube Results</h1> 
     <br>
+    
+    <div id="column1" class="column">
 
+    </div>
+    <div id="column2" class="column">
+      
+    </div>
+    <div id="column3" class="column">
+      
+    </div>
+    <div id="column4" class="column">
+      
+    </div>
+    <div id="column5" class="column">
+      
+    </div>
+    <div id="column6" class="column">
+    
+    </div>
+    <div id="column7" class="column">
+      
+    </div>
+    <div id="column8" class="column">
+      
+    </div>
+    <div id="column9" class="column">
+      
+    </div>
   </div>
 
   <div>
@@ -66,7 +93,7 @@
               function(err) { console.error("Error signing in", err); });
   }
   function loadClient() {
-    gapi.client.setApiKey("YOUR_API_KEY");
+    gapi.client.setApiKey("AIzaSyBTrwHONkXik6Dfm6XnMC3rda3IBsl0Ys4");
     return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
@@ -77,7 +104,7 @@
       "part": [
         "snippet"
       ],
-      "maxResults": 25,
+      "maxResults": 9,
       "q": "surfing"
     })
         .then(function(response) {
@@ -87,11 +114,10 @@
               function(err) { console.error("Execute error", err); });
   }
   gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
+    gapi.auth2.init({client_id: "989850531815-3dr7nh4nq6ggtna0l7kmkcqs3pposiji.apps.googleusercontent.com"});
   });
 </script>
-<button onclick="authenticate().then(loadClient)">authorize and load</button>
-<button onclick="execute()">execute</button>
+<button id="authButton" onclick="authenticate().then(loadClient).then(execute.bind(null, 'Python Variable'))">Authorize and Get Results</button>
 </div>
   
   <!--Div for Challenges-->
@@ -100,12 +126,10 @@
       <br>
       <p>Check your understanding with CODE-ED's Python Variable Challenge.</p>
       <br>
-      <iframe height="400px" width="100%" src="https://repl.it/@NathanDeGoey/PythonCompilor?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+      <iframe height="800px" width="100%" src="https://repl.it/@NathanDeGoey/PythonCompilor?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
   </div>
 </div>
 
     <!--Connect to main script.js file-->
     <script src="/script.js"></script>
-    <script src="https://apis.google.com/js/api.js"></script>
-  </body>
 </html>

@@ -19,8 +19,7 @@
     <a class="active" <button onclick="goPython()">Python</button></a>
     <a <button onclick="goJava()">Java</button></a>
     <a <button onclick="goC()">C</button></a>
-    <a <button onclick="goChallenges()">More Challenges</button></a>
-    <a <button onclick="goAbout()">About Us</button></a>
+    <a <button onclick="goChallenges()">Playground</button></a>
   </div>
 </div>
 <div class="sidebar">
@@ -33,7 +32,95 @@
     <a href="python_loops.html">Loops</a>
 </div>
 <div class="content">
-    <p> Test </p>
+    <h1> Indentation </h1>
+    <br>
+    <p> Indentation refers to the spaces at the beginning of a code line. Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important. Python uses indentation to indicate a block of code. </p>
+    <br>
+
+    <!--Div for Youtube Results-->
+  <div id="youtube_div" class="youtube">
+    <h1>Youtube Results</h1> 
+    <br>
+    
+    <div id="column1" class="column">
+
+    </div>
+    <div id="column2" class="column">
+      
+    </div>
+    <div id="column3" class="column">
+      
+    </div>
+    <div id="column4" class="column">
+      
+    </div>
+    <div id="column5" class="column">
+      
+    </div>
+    <div id="column6" class="column">
+    
+    </div>
+    <div id="column7" class="column">
+      
+    </div>
+    <div id="column8" class="column">
+      
+    </div>
+    <div id="column9" class="column">
+      
+    </div>
+  </div>
+
+  <div>
+  <script src="https://apis.google.com/js/api.js"></script>
+<script>
+  /**
+   * Sample JavaScript code for youtube.search.list
+   * See instructions for running APIs Explorer code samples locally:
+   * https://developers.google.com/explorer-help/guides/code_samples#javascript
+   */
+
+  function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
+  }
+  function loadClient() {
+    gapi.client.setApiKey("AIzaSyBTrwHONkXik6Dfm6XnMC3rda3IBsl0Ys4");
+    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  function execute() {
+    return gapi.client.youtube.search.list({
+      "part": [
+        "snippet"
+      ],
+      "maxResults": 9,
+      "q": "surfing"
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "989850531815-3dr7nh4nq6ggtna0l7kmkcqs3pposiji.apps.googleusercontent.com"});
+  });
+</script>
+<button id="authButton" onclick="authenticate().then(loadClient).then(execute.bind(null, 'Python Syntax'))">Authorize and Get Results</button>
+</div>
+
+    <div id="challenge_div" class="challenge">
+      <h1>Ready for a Challenge?</h1>
+      <br>
+      <p>Check your understanding with CODE-ED's Python Variable Challenge.</p>
+      <br>
+
+      <iframe height="800px" width="100%" src="https://repl.it/@JoshuaOng918/Python-Syntax?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 </div>
 
     <!--Connect to main script.js file-->
