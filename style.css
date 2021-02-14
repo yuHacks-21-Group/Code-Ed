@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
 body {
   background-color: #d3dfe0;
 }
 
 /*Header formatting */
 
-/* Style the header with a grey background and some padding */
+/* Style the header with a background and some padding */
 .header {
   overflow: hidden;
   background-color: #AED6DC;
@@ -33,9 +35,9 @@ body {
 }
 
 /* Change the background color on mouse-over */
-.header a:hover {
-  background-color: #1E2761;
-  color: #AED6DC;
+.header-right a:hover {
+  background-color: rgb(140, 188, 196);
+  color: #1E2761;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -63,13 +65,40 @@ body {
     float: none;
   }
 }
-/* The side navigation menu */
+
+/*Style the welcome div*/
+.welcome {
+  text-align: center;
+}
+
+/* Style the IntroVideo section of the page */
+.introvid {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio*/
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.welcomeIframe {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 18.5%;
+  bottom: 0;
+  right: 0;
+  width: 66%;
+  height: 66%;
+}
+
+
+/* The side navigation menu in the language pages*/
 .sidebar {
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #b0c5c7;
   position: fixed;
+  background-color: #b0c5c7;
   height: 100%;
   overflow: auto;
 }
@@ -93,6 +122,63 @@ body {
   background-color: rgb(185, 185, 185);
   color: #1E2761;
 }
+
+.content {
+  margin-left: 200px;
+  padding: 10px
+}
+
+
+/*Formatting for YouTube Results*/
+* {
+  box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33.3%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.youtube {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.youtube:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  position: relative;
+  overflow: hidden;
+  padding-top: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+}
+
+/* Then style the iframe to fit in the container div with full height and width of the card*/
+.youtubeResult {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
 
 /*
 body {
@@ -246,3 +332,4 @@ input, button {
 .credits-div link:hover, focus{
     color: color(#86110d blackness(+25%));
 }
+*/

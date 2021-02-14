@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!--This is the Python language page for Code-Ed. Here, you can find a navigation bar on the side that will allow the user to choose from multiple beginner concepts in the Python langauage. Each concept will be combined with videos fetched from the YouTube API on that specific concept in the Python language. Also, there will be a challenge section at the end of the page for the user to check their understanding of what they just learned.-->
+<!--This is the Python variables page for Code-Ed. -->
 <html>
   <head>
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
   <body>
   <!--Main Page divs-->
   <div id="header_div" class="header">
-  <a href="index.html" class="logo">Code-Ed</a>
+  <a href="/index.html" class="logo">Code-Ed</a>
   <div class="header-right">
     <a class="active" <button onclick="goPython()">Python</button></a>
     <a <button onclick="goJava()">Java</button></a>
@@ -30,6 +30,52 @@
     <a href="python_lists.html">Lists</a>
     <a href="python_ifstatements.html">If Statements</a>
     <a href="python_loops.html">Loops</a>
+</div>
+
+<!--Content Divs-->
+<div class="content">
+  <!--Div for the description of the concept-->
+  <div id="description_div" class="contentdesc">
+    <h1> Variables </h1>
+    <p> Variables are storage containers for data. Think of a variable as a box where its name is the box's label and the data is the content stored inside it. </p>
+  </div>
+  <!--Div for Youtube Results-->
+  <div id="youtube_div" class="youtube">
+    <h1>Youtube Results</h1> 
+    <div class="column">
+      <div class="card">
+        <iframe class="youtubeResult"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY" title="pyVar1">
+        </iframe>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <iframe class="youtubeResult"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY" title="pyVar1">
+        </iframe>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <iframe class="youtubeResult"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY" title="pyVar1">
+        </iframe>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <iframe class="youtubeResult"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY" title="pyVar1">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  
+  <!--Div for Challenges-->
+  <div id="challenge_div" class="challenge">
+
+  </div>
 </div>
     <!--Connect to main script.js file-->
     <script src="/script.js"></script>
