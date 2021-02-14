@@ -21,7 +21,7 @@ This is the main JavaScript file for Code-Ed. This file handles operations like
 // }
 
 //API_KEY from Google Credentials
-let API_KEY = "AIzaSyBTrwHONkXik6Dfm6XnMC3rda3IBsl0Ys4"
+//let API_KEY = "AIzaSyBTrwHONkXik6Dfm6XnMC3rda3IBsl0Ys4"
 
 //Function to go to the home page when the Home button is selected
 function goHome(){
@@ -41,7 +41,8 @@ function goChallenges(){
 //Function to go to the Python page when the Python button is selected
 function goPython(){
   window.location="/python.html";
-  videoSearch(API_KEY, "Python", 9)
+  execute();
+  //videoSearch(API_KEY, "Python", 9)
 }
 
 //Function to go to the Java page when the Java button is selected
@@ -56,31 +57,99 @@ function goC(){
 
 //Functions to interact with YouTube API
 
-function videoSearch(key, search, maxResults) {
+// $(document).ready(function(){
 
-  $("#videos").empty(); //this clears out the old data when we make a new request.
+// var video = ""
 
-  //inside this method make a GET request to the YouTube API.
-  $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search,function(data){
-    console.log(data)
+// function videoSearch(key, search, maxResults) {
 
-    data.items.forEach(item => {
-      var video = `
+//   //$("#videos").empty(); //this clears out the old data when we make a new request.
 
-        <div class="column">
-          <div class="card">
-              <iframe class="youtubeResult"
-              src="https://www.youtube.com/embed/${item.id.videoId}" allowfullscreen>
-              </iframe>
-          </div>
-        </div>
+//   //inside this method make a GET request to the YouTube API.
+//   $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search,function(data){
+//     console.log(data)
 
-      `
+//     data.items.forEach(item => {
+//       var video = `
 
-      $("#youtube_div").append(video)
+//         <div class="column">
+//           <div class="card">
+//               <iframe class="youtubeResult"
+//               src="https://www.youtube.com/embed/${item.id.videoId}" allowfullscreen>
+//               </iframe>
+//           </div>
+//         </div>
+
+//       `
+
+//       $("#youtube_div").append(video)
+//     })
+
+//   })
+
+// }
+
+// })
+
+// $(document).ready(function(){
+
+// var API_KEY = "AIzaSyBTrwHONkXik6Dfm6XnMC3rda3IBsl0Ys4"
+
+// var video = ""
+
+// function videoSearch(key, search, maxResults) {
+
+//   $("#videos").empty() //this clears out the old data when we make a new request.
+
+//   //inside this method make a simple GET request.
+//   $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search,function(data){
+//     console.log(data)
+
+//     data.items.forEach(item => {
+//       video = `
+      
+//       <iframe width="420" height="315" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
+      
+//       `
+
+//       $("#videos").append(video)
+//     })
+
+//   })
+
+/**
+   * Sample JavaScript code for youtube.search.list
+   * See instructions for running APIs Explorer code samples locally:
+   * https://developers.google.com/explorer-help/guides/code_samples#javascript
+   */
+
+  function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
+  }
+  function loadClient() {
+    gapi.client.setApiKey("AIzaSyBTrwHONkXik6Dfm6XnMC3rda3IBsl0Ys4");
+    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  function execute() {
+    return gapi.client.youtube.search.list({
+      "part": [
+        "snippet"
+      ],
+      "maxResults": 25,
+      "q": "surfing"
     })
-
-  })
-
-}
-
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
+  });
