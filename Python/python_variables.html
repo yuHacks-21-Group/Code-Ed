@@ -8,12 +8,13 @@
     <title>Code-Ed</title>
     <!--Connect to main style.css file-->
     <link href="/style.css" rel="stylesheet" type="text/css" />
+    <link href="/teachstyle.css" rel="stylesheet" type="text/css"/>
   </head>
 
   <body>
   <!--Main Page divs-->
   <div id="header_div" class="header">
-  <a href="/index.html" class="logo">Code-Ed</a>
+  <a href="/index.html" class="logo">CODE-ED</a>
   <div class="header-right">
     <a class="active" <button onclick="goPython()">Python</button></a>
     <a <button onclick="goJava()">Java</button></a>
@@ -22,7 +23,7 @@
     <a <button onclick="goAbout()">About Us</button></a>
   </div>
 </div>
-<div class="sidebar">
+<div id="sidebar" class="sidebar">
     <a href="/python.html"> Get Started </a>
     <a href="python_syntax.html">Syntax</a>
     <a href="python_datatypes.html">Data Types</a>
@@ -37,47 +38,28 @@
   <!--Div for the description of the concept-->
   <div id="description_div" class="contentdesc">
     <h1> Variables </h1>
+    <br>
     <p> Variables are storage containers for data. Think of a variable as a box where its name is the box's label and the data is the content stored inside it. </p>
   </div>
+  <br>
   <!--Div for Youtube Results-->
   <div id="youtube_div" class="youtube">
     <h1>Youtube Results</h1> 
-    <div class="column">
-      <div class="card">
-        <iframe class="youtubeResult"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY" title="pyVar1">
-        </iframe>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <iframe class="youtubeResult"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY" title="pyVar1">
-        </iframe>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <iframe class="youtubeResult"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY" title="pyVar1">
-        </iframe>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <iframe class="youtubeResult"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY" title="pyVar1">
-        </iframe>
-      </div>
-    </div>
+    <br>
+
   </div>
   
   <!--Div for Challenges-->
   <div id="challenge_div" class="challenge">
-
+      <h1>Ready for a Challenge?</h1>
+      <br>
+      <p>Check your understanding with CODE-ED's Python Variable Challenge.</p>
+      <br>
+      <iframe height="400px" width="100%" src="https://repl.it/@NathanDeGoey/PythonCompilor?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
   </div>
 </div>
     <!--Connect to main script.js file-->
     <script src="/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>
 </html>
